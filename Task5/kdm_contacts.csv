@@ -1,0 +1,7 @@
+contact_id,name,role,organisation,sector,account_owner,last_contact,opportunity,opportunity_value_mur,next_step,next_step_date
+C001,Nadia Perrine,Head of Projects,Northshore Resorts Ltd,private,Pranav M.,2026-10-02,Hotel refurbishment phase 2,180000000,Send revised programme,2026-11-06
+C002,Vikash Seetul,Development Director,Belvue Property Developments Ltd,private,Pranav M.,2026-07-15,Residential block C,95000000,Reopen the block C discussion,2026-11-30
+C003,Claire Ah Kim,Procurement Manager,Island Retail Parks Ltd,private,Laura Begue,2026-10-12,Mall extension,420000000,Submit tender,2026-11-20
+C004,Yannick Rose,Chief Engineer,Road Works Agency (sample public body),public,Laura Begue,2026-09-30,Resurfacing programme 2027,250000000,Attend pre-bid meeting,2026-11-12
+C005,Shalini Dookhy,Chief Financial Officer,Belvue Property Developments Ltd,private,Pranav M.,2026-08-20,,,,
+C006,Patrick Lebon,General Manager,Northshore Resorts Ltd,private,Laura Begue,2026-10-20,,,,
