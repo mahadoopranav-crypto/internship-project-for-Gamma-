@@ -15,26 +15,28 @@ To rerun, put the five PDFs in a folder called `pdfs` next to the notebook and r
 
 | Column | Description |
 |---|---|
-| source_file | PDF the row was extracted from |
+| source file | PDF the row was extracted from |
 | supplier, customer | Issuer and recipient of the invoice |
-| invoice_number | Invoice number as printed |
-| invoice_date, due_date, event_date | Dates (YYYY-MM-DD), blank where the invoice has none |
-| customer_reference, payment_terms | As printed, blank where absent |
+| invoice number | Invoice number as printed |
+| invoice date, due date, event date | Dates (YYYY-MM-DD), blank where the invoice has none |
+| customer reference, payment terms | As printed, blank where absent |
 | currency | MUR or USD |
-| subtotal, discount, delivery, tax_rate, tax_amount, total | Amounts in the invoice currency |
-| deposit, balance_due | Deposit already paid and amount still owed |
-| line_count | Number of line items |
-| lines_match_subtotal | True if the line items add up to the printed subtotal |
-| total_reconciles | True if subtotal - discount + delivery + tax equals the printed total |
+| subtotal | Sum of the line items |
+| tax amount, tax rate | VAT or sales tax charged, and its rate in % (15 for the MUR invoices, 0 for the USD invoices) |
+| delivery | Delivery or other charges |
+| discount | Discount applied to the whole invoice |
+| total | Total as printed on the invoice |
+| deposit, deposit date | Deposit already paid and the date it was received |
+| balance due | Amount still owed |
 
 ## Sheet: Line items (one row per invoice line)
 
-source_file, invoice_number, line, item_code, description, quantity, unit_price, discount_percent, discount_amount, line_total. Fields an invoice does not have are left blank.
+source file, invoice number, line, item code, description, quantity, unit price, discount percent, discount amount, line total. Fields an invoice does not have are left blank.
 
 ## Method
 
 - Text is extracted from each PDF with pdfplumber.
 - The five invoices use five different layouts (English and French, MUR and USD, different number formats), so each layout has its own parser.
 - Amounts written as `2 250,00` or `1,200.00` are converted to plain numbers, and dates to YYYY-MM-DD.
-- All five invoices pass both checks above, and every line item was also compared against the text of its PDF.
+- The notebook checks every invoice: the line items must add up to the subtotal, and subtotal - discount + delivery + tax must equal the printed total. All five invoices pass.
 - Names of individual people printed on the invoices are not included.
