@@ -39,4 +39,3 @@ source file, invoice number, line, item code, description, quantity, unit price,
 - The five invoices use five different layouts (English and French, MUR and USD, different number formats), so each layout has its own parser.
 - Amounts written as `2 250,00` or `1,200.00` are converted to plain numbers, and dates to YYYY-MM-DD.
 - The notebook checks every invoice: the line items must add up to the subtotal, and subtotal - discount + delivery + tax must equal the printed total. All five invoices pass.
-- Names of individual people printed on the invoices are not included.
