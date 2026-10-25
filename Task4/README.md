@@ -1,6 +1,6 @@
 # Task 4: PDF Data Extraction
 
-Data extracted from the five invoice PDFs supplied for the assessment (52 line items in total).
+Data extracted from the five invoice PDFs supplied for the assessment.
 
 ## Files
 
@@ -8,8 +8,6 @@ Data extracted from the five invoice PDFs supplied for the assessment (52 line i
 |---|---|
 | `Task4.xlsx` | Extracted data, with two sheets: `Invoices` and `Line items` |
 | `Task4_extraction.ipynb` | Python notebook (pdfplumber and pandas) that reads the PDFs and writes `Task4.xlsx` |
-
-To rerun, put the five PDFs in a folder called `pdfs` next to the notebook and run all cells. The source PDFs are not included in this repository.
 
 ## Sheet: Invoices (one row per invoice)
 
@@ -29,7 +27,7 @@ To rerun, put the five PDFs in a folder called `pdfs` next to the notebook and r
 | deposit, deposit date | Deposit already paid and the date it was received |
 | balance due | Amount still owed |
 
-## Sheet: Line items (one row per invoice line)
+## Sheet: Line items
 
 source file, invoice number, line, item code, description, quantity, unit price, discount percent, discount amount, line total. Fields an invoice does not have are left blank.
 
